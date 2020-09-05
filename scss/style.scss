@@ -1,12 +1,13 @@
 @import 'config';
 
 body {
-   color: red;
+   color: #333;
+   background-color: #d6d6d6;
 }
 
 header {
-   background-color: lighten($primary-color, 10);
-   color: #333;
+   background-color: lighten($primary-color, 5);
+   color: #fff;
 
    .header {
       display: flex;
@@ -27,7 +28,7 @@ header {
 
          h2 {
             margin-left: 1rem;
-            color: #333;
+            color: #fff;
          }
       }
 
@@ -37,21 +38,105 @@ header {
          justify-content: space-around;
 
          i {
-            margin-right: 2rem;
-            color: #333;
+            margin-right: 3rem;
+            color: #fff;
          }
       }
    }
+   .burger > div {
+      background-color: #fff;
+      width: 0.2rem;
+      height: 0.2rem;
+      border-radius: 50%;
+      margin: 0.3rem;
+   }
 }
 
-.burger > div {
-   background-color: #333;
-   width: 0.2rem;
-   height: 0.2rem;
-   border-radius: 50%;
-   margin: 0.3rem;
+.message {
+   height: 80vh;
 }
 
-#main {
-   margin-top: 1rem;
+.input-fields {
+   position: fixed;
+   bottom: 0;
+
+   .input-field {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: flex;
+      width: 100vw;
+      align-items: center;
+      justify-content: center;
+
+      .fas {
+         cursor: pointer;
+      }
+
+      .user-1,
+      .user-2 {
+         .user-input {
+            display: block;
+            width: 48vw;
+            height: 2rem;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+            border-radius: 22px;
+            border: none;
+            outline: none;
+            padding: 1.5rem 3rem;
+            font-size: 1rem;
+            color: #333;
+            z-index: 7;
+         }
+      }
+
+      .user-1 {
+         .smiles {
+            color: #555;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 0.8rem;
+            left: 2%;
+         }
+         .cameras {
+            color: #555;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 0.8rem;
+            left: 43%;
+         }
+         .sends {
+            color: $primary-color;
+            font-size: 2.9rem;
+            position: absolute;
+            top: 1.2px;
+            left: 620px;
+         }
+      }
+
+      .user-2 {
+         .smiles {
+            color: #555;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 0.8rem;
+            left: 51%;
+         }
+         .cameras {
+            color: #555;
+            font-size: 1.4rem;
+            position: absolute;
+            top: 0.8rem;
+            left: 92%;
+         }
+         .sends {
+            color: $primary-color;
+            font-size: 2.9rem;
+            position: absolute;
+            top: 1.2px;
+            right: 26px;
+         }
+      }
+   }
 }
