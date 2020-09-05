@@ -1,0 +1,57 @@
+@import 'config';
+
+body {
+   color: red;
+}
+
+header {
+   background-color: lighten($primary-color, 10);
+   color: #333;
+
+   .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 5;
+
+      .header-name {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         margin: 1rem 0;
+
+         img {
+            width: 50px;
+            border-radius: 50%;
+         }
+
+         h2 {
+            margin-left: 1rem;
+            color: #333;
+         }
+      }
+
+      .header-utilities {
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+
+         i {
+            margin-right: 2rem;
+            color: #333;
+         }
+      }
+   }
+}
+
+.burger > div {
+   background-color: #333;
+   width: 0.2rem;
+   height: 0.2rem;
+   border-radius: 50%;
+   margin: 0.3rem;
+}
+
+#main {
+   margin-top: 1rem;
+}

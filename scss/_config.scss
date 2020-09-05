@@ -1,0 +1,21 @@
+$primary-color: rgb(192, 192, 192);
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+.container {
+   width: 90%;
+   margin: auto;
+}
+
+img {
+   width: 100%;
+}
+
+a {
+   color: white;
+   text-decoration: none;
+}
