@@ -1,41 +1,54 @@
-// SELECTORS
+// SELEcTORS
 const userOneForm = document.querySelector('.user-1-form');
 const userTwoForm = document.querySelector('.user-2-form');
-const userOneInput = document.querySelector('.user-1 input');
-const userTwoInput = document.querySelector('.user-2 input');
-const messageOne = document.querySelector('.messages-1');
-const messageTwo = document.querySelector('.messages-2');
+const messages = document.querySelector('.messages');
+const userOneInput = document.querySelector('.user-1');
+const userTwoInput = document.querySelector('.user-2');
+const sendBtn = document.querySelector('.user-1-btn');
 
 // EVENTS
-userOneForm.addEventListener('submit', userOneFormFunction);
-userTwoForm.addEventListener('submit', userTwoFormFunction);
+userOneForm.addEventListener('submit', userOneFunction);
+userTwoForm.addEventListener('submit', userTwoFunction);
 
 // FUNCTIONS
-function userOneFormFunction(e) {
+function userOneFunction(e) {
    e.preventDefault();
-   // get the input text
-   const userOneText = userOneInput.value;
-   // create a div for the new text
-   const newTextDiv = document.createElement('div');
-   newTextDiv.innerHTML = userOneText;
-   newTextDiv.classList.add('message-1');
 
-   // APPEND THE NEW DIV TO THE MESSAGE CLASS IN THE HTML
-   messageOne.appendChild(newTextDiv);
+   if (userOneInput.value === '') {
+      console.log('Empty Message');
+   } else {
+      // Grab the text in the input
+      const userOneText = userOneInput.value;
+      // Create a new div for the text
+      const newTextDiv = document.createElement('div');
+      newTextDiv.classList.add('message-1');
+      // Append the text into the new div
+      newTextDiv.innerHTML = userOneText;
+      // Append the new div to the messages div in the html
+      messages.appendChild(newTextDiv);
 
-   console.log(newTextDiv);
+      // Clear the field
+      userOneInput.value = '';
+   }
 }
 
-function userTwoFormFunction(e) {
+function userTwoFunction(e) {
    e.preventDefault();
-   // get the input text
-   const userTwoText = userTwoInput.value;
-   const newTextDiv = document.createElement('div');
-   newTextDiv.classList.add('message-2');
-   newTextDiv.innerHTML = userTwoText;
 
-   // APPEND THE NEW DIV TO THE MESSAGE CLASS IN THE HTML
-   messageTwo.appendChild(newTextDiv);
+   if (userTwoInput.value === '') {
+      console.log('Empty Message');
+   } else {
+      // Grab the text in the input
+      const userTwoText = userTwoInput.value;
+      // Create a new div for the text
+      const newTextDiv = document.createElement('div');
+      newTextDiv.classList.add('message-2');
+      // Append the text into the new div
+      newTextDiv.innerHTML = userTwoText;
+      // Append the new div to the messages div in the html
+      messages.appendChild(newTextDiv);
 
-   console.log(newTextDiv);
+      // Clear the field
+      userTwoInput.value = '';
+   }
 }
