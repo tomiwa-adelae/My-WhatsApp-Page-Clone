@@ -1,9 +1,11 @@
 @import 'config';
+@import 'contact';
 
 * {
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   overflow-x: hidden;
 }
 
 body {
@@ -36,6 +38,7 @@ header {
          display: flex;
          align-items: center;
          justify-content: center;
+         cursor: pointer;
 
          h3 {
             margin-left: 1.5rem;

@@ -1,0 +1,85 @@
+.contact-section {
+   background-color: darken(#fff, 15);
+   width: 30%;
+   height: 100vh;
+   position: absolute;
+   top: 0;
+   right: -50%;
+   z-index: 12;
+   transition: all ease 0.5s;
+
+   .contact-header {
+      background-color: #c2c2c2;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      padding: 1.4rem 0;
+
+      h3 {
+         margin-left: 3rem;
+         font-weight: 200;
+      }
+
+      .info-burger {
+         margin-left: 1.5rem;
+         cursor: pointer;
+
+         div {
+            background-color: rgb(116, 114, 114);
+            width: 28px;
+            height: 3px;
+            margin: 0 0 5px 0;
+
+            &.line-1 {
+               top: 0;
+               transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            &.line-2 {
+               opacity: 0;
+            }
+
+            &.line-3 {
+               top: 0;
+               transform: rotate(-45deg) translate(6px, -6px);
+            }
+         }
+      }
+   }
+
+   .contact-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+         width: 250px;
+         height: 250px;
+         border-radius: 50%;
+         border: 3px $primary-color solid;
+         margin: 2rem 0;
+         cursor: pointer;
+      }
+   }
+
+   .contact-name-phone {
+      display: flex;
+      flex-flow: column wrap;
+      align-items: center;
+      justify-content: center;
+
+      h5 {
+         color: rgb(116, 114, 114);
+      }
+   }
+}
+
+.show-contact-section {
+   background-color: darken(#fff, 15);
+   width: 30%;
+   height: 100vh;
+   position: absolute;
+   top: 0;
+   right: 0%;
+   z-index: 12;
+}
