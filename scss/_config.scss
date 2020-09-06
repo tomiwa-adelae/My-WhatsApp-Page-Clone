@@ -1,13 +1,13 @@
-$primary-color: teal;
 * {
-   box-sizing: border-box;
    margin: 0;
    padding: 0;
+   box-sizing: border-box;
 }
 
 .container {
-   width: 90%;
+   width: 85%;
    margin: auto;
+   max-width: 1120px;
 }
 
 img {
@@ -18,3 +18,5 @@ a {
    color: white;
    text-decoration: none;
 }
+
+$primary-color: teal;

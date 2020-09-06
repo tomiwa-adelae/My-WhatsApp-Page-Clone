@@ -1,0 +1,21 @@
+@media screen and (max-width: 1170px) {
+   .inputs {
+      form input {
+         border-radius: 20px;
+         padding: 0.5rem 1rem;
+         width: 85%;
+         position: relative;
+      }
+   }
+}
+
+@media screen and (max-width: 780px) {
+   .inputs {
+      form input {
+         border-radius: 20px;
+         padding: 0.5rem 1rem;
+         width: 80%;
+         position: relative;
+      }
+   }
+}
