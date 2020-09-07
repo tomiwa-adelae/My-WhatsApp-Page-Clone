@@ -31,7 +31,7 @@ function userOneFunction(e) {
       newTextDiv.classList.add('message-1');
       // Create a Button for the delete Icon
       const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('delete-btn');
+      deleteBtn.classList.add('delete-btn-1');
 
       // Create an I tag
       const newTag = document.createElement('i');
@@ -49,6 +49,11 @@ function userOneFunction(e) {
 
       // Clear the field
       userOneInput.value = '';
+      // Add the Delete Message Functionality
+      deleteBtn.addEventListener('click', function (e) {
+         const messageDiv = e.target.parentElement;
+         messageDiv.remove();
+      });
    }
 }
 
@@ -64,7 +69,7 @@ function userTwoFunction(e) {
       newTextDiv.classList.add('message-2');
       // Create a Button for the delete Icon
       const deleteBtn = document.createElement('button');
-      deleteBtn.classList.add('delete-btn');
+      deleteBtn.classList.add('delete-btn-2');
       // Create an I tag
       const newTag = document.createElement('i');
       newTag.classList.add('fas');
@@ -81,6 +86,11 @@ function userTwoFunction(e) {
 
       // Clear the field
       userTwoInput.value = '';
+      // Add the Delete Message Functionality
+      deleteBtn.addEventListener('click', function (e) {
+         const messageDiv = e.target.parentElement;
+         messageDiv.remove();
+      });
    }
 }
 
