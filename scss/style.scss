@@ -161,13 +161,24 @@ header {
       align-items: center;
       justify-content: space-between;
 
-      i {
-         opacity: 0.2;
+      .delete-btn {
+         outline: none;
+         border: none;
          cursor: pointer;
-         transition: all 0.5s ease;
+         background-color: white;
+
+         i {
+            opacity: 0.2;
+            font-size: 1rem;
+            pointer-events: none;
+         }
 
          &:hover {
-            opacity: 1;
+            i {
+               opacity: 1;
+               color: red;
+               transition: all ease 0.5s;
+            }
          }
       }
    }
@@ -183,13 +194,25 @@ header {
       align-items: center;
       justify-content: space-between;
 
-      i {
-         opacity: 0.2;
+      .delete-btn {
+         outline: none;
+         border: none;
          cursor: pointer;
-         transition: all 0.5s ease;
+         background-color: lighten($primary-color, 10);
+
+         i {
+            opacity: 0.2;
+            font-size: 1rem;
+            pointer-events: none;
+            color: white;
+         }
 
          &:hover {
-            opacity: 1;
+            i {
+               opacity: 1;
+               color: red;
+               transition: all ease 0.5s;
+            }
          }
       }
    }

@@ -29,15 +29,21 @@ function userOneFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-1');
+      // Create a Button for the delete Icon
+      const deleteBtn = document.createElement('button');
+      deleteBtn.classList.add('delete-btn');
+
       // Create an I tag
       const newTag = document.createElement('i');
       newTag.classList.add('fas');
-      newTag.classList.add('fa-angle-down');
+      newTag.classList.add('fa-trash');
       newTag.classList.add('show-tag');
+      // Append the I tag to the button
+      deleteBtn.appendChild(newTag);
       // Append the text into the new div
       newTextDiv.innerHTML = userOneText;
-      // Append the new I tag to the messages div in the html
-      newTextDiv.appendChild(newTag);
+      // Append the DeleteBtn to the messages div in the html
+      newTextDiv.appendChild(deleteBtn);
       // Append the new div to the messages div in the html
       messages.appendChild(newTextDiv);
 
@@ -56,15 +62,20 @@ function userTwoFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-2');
+      // Create a Button for the delete Icon
+      const deleteBtn = document.createElement('button');
+      deleteBtn.classList.add('delete-btn');
       // Create an I tag
       const newTag = document.createElement('i');
       newTag.classList.add('fas');
-      newTag.classList.add('fa-angle-down');
+      newTag.classList.add('fa-trash');
       newTag.classList.add('show-tag');
+      // Append the I tag to the button
+      deleteBtn.appendChild(newTag);
       // Append the text into the new div
       newTextDiv.innerHTML = userTwoText;
       // Append the new I tag to the messages div in the html
-      newTextDiv.appendChild(newTag);
+      newTextDiv.appendChild(deleteBtn);
       // Append the new div to the messages div in the html
       messages.appendChild(newTextDiv);
 
