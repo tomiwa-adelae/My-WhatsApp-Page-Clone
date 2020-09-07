@@ -9,12 +9,14 @@ const sendTwoBtn = document.querySelector('.user-2-btn');
 const headerName = document.querySelector('.header-name');
 const contactSection = document.querySelector('.contact-section');
 const closeContactBtn = document.querySelector('.info-burger');
+const searchBtn = document.querySelector('.search-btn');
 
 // EVENTS
 userOneForm.addEventListener('submit', userOneFunction);
 userTwoForm.addEventListener('submit', userTwoFunction);
 headerName.addEventListener('click', showContactFunction);
 closeContactBtn.addEventListener('click', showContactFunctionBtn);
+searchBtn.addEventListener('click', searchBtnFunction);
 
 // FUNCTIONS
 function userOneFunction(e) {
@@ -27,8 +29,15 @@ function userOneFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-1');
+      // Create an I tag
+      const newTag = document.createElement('i');
+      newTag.classList.add('fas');
+      newTag.classList.add('fa-angle-down');
+      newTag.classList.add('show-tag');
       // Append the text into the new div
       newTextDiv.innerHTML = userOneText;
+      // Append the new I tag to the messages div in the html
+      newTextDiv.appendChild(newTag);
       // Append the new div to the messages div in the html
       messages.appendChild(newTextDiv);
 
@@ -47,8 +56,15 @@ function userTwoFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-2');
+      // Create an I tag
+      const newTag = document.createElement('i');
+      newTag.classList.add('fas');
+      newTag.classList.add('fa-angle-down');
+      newTag.classList.add('show-tag');
       // Append the text into the new div
       newTextDiv.innerHTML = userTwoText;
+      // Append the new I tag to the messages div in the html
+      newTextDiv.appendChild(newTag);
       // Append the new div to the messages div in the html
       messages.appendChild(newTextDiv);
 
@@ -64,4 +80,9 @@ function showContactFunction(e) {
 
 function showContactFunctionBtn(e) {
    contactSection.classList.toggle('show-contact-section');
+}
+
+function searchBtnFunction(e) {
+   const searchInput = document.querySelector('.search-input');
+   searchInput.classList.toggle('show-search-input');
 }
