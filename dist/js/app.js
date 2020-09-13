@@ -51,8 +51,8 @@ function userOneFunction(e) {
       userOneInput.value = '';
       // Add the Delete Message Functionality
       deleteBtn.addEventListener('click', function (e) {
-         const messageDiv = e.target.parentElement;
-         messageDiv.remove();
+         const messageOneDiv = e.target.parentElement;
+         messageOneDiv.remove();
       });
    }
 }

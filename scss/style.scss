@@ -94,6 +94,7 @@ header {
          outline: none;
       }
    }
+
    .show-search-input {
       margin-bottom: 2rem;
       position: absolute;
@@ -149,6 +150,7 @@ header {
 }
 
 .messages {
+   overflow: hidden;
    .message-1 {
       float: left;
       width: 55%;
@@ -223,6 +225,11 @@ header {
 
 .main {
    margin-bottom: 3.7rem;
+}
+
+.delete-message-1 {
+   transform: translateY(8rem) rotateZ(20deg);
+   opacity: 0;
 }
 
 @import 'mobile';
