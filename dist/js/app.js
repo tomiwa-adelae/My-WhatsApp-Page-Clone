@@ -9,6 +9,7 @@ const sendTwoBtn = document.querySelector('.user-2-btn');
 const headerName = document.querySelector('.header-name');
 const contactSection = document.querySelector('.contact-section');
 const closeContactBtn = document.querySelector('.info-burger');
+const searchInput = document.querySelector('.search-input input');
 const searchBtn = document.querySelector('.search-btn');
 const removeSearchInput = document.querySelector('.remove-search-btn');
 const messageDeleteOne = document.querySelector('.messages');
@@ -20,6 +21,7 @@ userTwoForm.addEventListener('submit', userTwoFunction);
 headerName.addEventListener('click', showContactFunction);
 closeContactBtn.addEventListener('click', showContactFunctionBtn);
 searchBtn.addEventListener('click', searchBtnFunction);
+searchInput.addEventListener('keyup', searchInputFunction);
 removeSearchInput.addEventListener('click', removeSearchInputFunction);
 messageDeleteOne.addEventListener('click', deleteMessageOneFunction);
 messageDeleteTwo.addEventListener('click', deleteMessageTwoFunction);
@@ -97,6 +99,24 @@ function showContactFunction(e) {
 
 function showContactFunctionBtn(e) {
    contactSection.classList.toggle('show-contact-section');
+}
+
+function searchInputFunction(e) {
+   // Grab the text being typed in anmd convert to lowercase
+   const searchText = e.target.value.toLowerCase();
+
+   // Grab all message div
+   const messagesDiv = messages.getElementsByTagName('div');
+   // Convert all messageDiv from HTML Collection to an Array
+   Array.from(messagesDiv).forEach(function (messageDiv) {
+      const message = messageDiv.firstChild.textContent;
+      // Compare the message the search value
+      if (message.toLowerCase().indexOf(searchText) != -1) {
+         messageDiv.style.opacity = 1;
+      } else {
+         messageDiv.style.opacity = 0.1;
+      }
+   });
 }
 
 function searchBtnFunction(e) {
