@@ -10,6 +10,7 @@ const headerName = document.querySelector('.header-name');
 const contactSection = document.querySelector('.contact-section');
 const closeContactBtn = document.querySelector('.info-burger');
 const searchBtn = document.querySelector('.search-btn');
+const removeSearchInput = document.querySelector('.remove-search-btn');
 const messageDeleteOne = document.querySelector('.messages');
 const messageDeleteTwo = document.querySelector('.messages');
 
@@ -19,6 +20,7 @@ userTwoForm.addEventListener('submit', userTwoFunction);
 headerName.addEventListener('click', showContactFunction);
 closeContactBtn.addEventListener('click', showContactFunctionBtn);
 searchBtn.addEventListener('click', searchBtnFunction);
+removeSearchInput.addEventListener('click', removeSearchInputFunction);
 messageDeleteOne.addEventListener('click', deleteMessageOneFunction);
 messageDeleteTwo.addEventListener('click', deleteMessageTwoFunction);
 
@@ -53,11 +55,6 @@ function userOneFunction(e) {
 
       // Clear the field
       userOneInput.value = '';
-      // Add the Delete Message Functionality
-      // deleteBtn.addEventListener('click', function (e) {
-      //    const messageOneDiv = e.target.parentElement;
-      //    messageOneDiv.remove();
-      // });
    }
 }
 
@@ -90,11 +87,6 @@ function userTwoFunction(e) {
 
       // Clear the field
       userTwoInput.value = '';
-      // Add the Delete Message Functionality
-      // deleteBtn.addEventListener('click', function (e) {
-      //    const messageDiv = e.target.parentElement;
-      //    messageDiv.remove();
-      // });
    }
 }
 
@@ -109,7 +101,12 @@ function showContactFunctionBtn(e) {
 
 function searchBtnFunction(e) {
    const searchInput = document.querySelector('.search-input');
-   searchInput.classList.toggle('show-search-input');
+   searchInput.classList.add('show-search-input');
+}
+
+function removeSearchInputFunction(e) {
+   const searchInput = document.querySelector('.search-input');
+   searchInput.classList.remove('show-search-input');
 }
 
 function deleteMessageOneFunction(e) {

@@ -88,10 +88,36 @@ header {
       transition: all ease 0.5s;
 
       input {
-         padding: 0.5rem 1rem;
+         padding: 0.4rem 1rem;
          width: 70%;
          border: none;
          outline: none;
+      }
+
+      button {
+         // padding: 0.5rem 1rem;
+         background-color: white;
+         outline: none;
+         border: none;
+         cursor: pointer;
+
+         div {
+            background-color: rgb(156, 156, 156);
+            width: 15px;
+            height: 3px;
+            margin: 0.3rem;
+         }
+         .remove-search-input-1 {
+            transform: rotate(45deg) translate(5px, 5px);
+         }
+
+         .remove-search-input-2 {
+            opacity: 0;
+         }
+
+         .remove-search-input-3 {
+            transform: rotate(-45deg) translate(6px, -6px);
+         }
       }
    }
 
