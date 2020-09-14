@@ -10,6 +10,8 @@ const headerName = document.querySelector('.header-name');
 const contactSection = document.querySelector('.contact-section');
 const closeContactBtn = document.querySelector('.info-burger');
 const searchBtn = document.querySelector('.search-btn');
+const messageDeleteOne = document.querySelector('.messages');
+const messageDeleteTwo = document.querySelector('.messages');
 
 // EVENTS
 userOneForm.addEventListener('submit', userOneFunction);
@@ -17,6 +19,8 @@ userTwoForm.addEventListener('submit', userTwoFunction);
 headerName.addEventListener('click', showContactFunction);
 closeContactBtn.addEventListener('click', showContactFunctionBtn);
 searchBtn.addEventListener('click', searchBtnFunction);
+messageDeleteOne.addEventListener('click', deleteMessageOneFunction);
+messageDeleteTwo.addEventListener('click', deleteMessageTwoFunction);
 
 // FUNCTIONS
 function userOneFunction(e) {
@@ -50,10 +54,10 @@ function userOneFunction(e) {
       // Clear the field
       userOneInput.value = '';
       // Add the Delete Message Functionality
-      deleteBtn.addEventListener('click', function (e) {
-         const messageOneDiv = e.target.parentElement;
-         messageOneDiv.remove();
-      });
+      // deleteBtn.addEventListener('click', function (e) {
+      //    const messageOneDiv = e.target.parentElement;
+      //    messageOneDiv.remove();
+      // });
    }
 }
 
@@ -87,10 +91,10 @@ function userTwoFunction(e) {
       // Clear the field
       userTwoInput.value = '';
       // Add the Delete Message Functionality
-      deleteBtn.addEventListener('click', function (e) {
-         const messageDiv = e.target.parentElement;
-         messageDiv.remove();
-      });
+      // deleteBtn.addEventListener('click', function (e) {
+      //    const messageDiv = e.target.parentElement;
+      //    messageDiv.remove();
+      // });
    }
 }
 
@@ -106,4 +110,32 @@ function showContactFunctionBtn(e) {
 function searchBtnFunction(e) {
    const searchInput = document.querySelector('.search-input');
    searchInput.classList.toggle('show-search-input');
+}
+
+function deleteMessageOneFunction(e) {
+   const messageOne = e.target;
+   if (messageOne.classList[0] === 'delete-btn-1') {
+      messageOneDiv = messageOne.parentElement;
+      // Animate the message
+      messageOneDiv.classList.add('delete-message-1');
+
+      // Now remove the message
+      messageOneDiv.addEventListener('transitionend', (e) => {
+         messageOneDiv.remove();
+      });
+   }
+}
+
+function deleteMessageTwoFunction(e) {
+   const messageTwo = e.target;
+   if (messageTwo.classList[0] === 'delete-btn-2') {
+      messageTwoDiv = messageTwo.parentElement;
+      // Animate the message
+      messageTwoDiv.classList.add('delete-message-2');
+
+      // Now remove the message
+      messageTwoDiv.addEventListener('transitionend', (e) => {
+         messageTwoDiv.remove();
+      });
+   }
 }

@@ -162,6 +162,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: all ease 2s;
 
       .delete-btn-1 {
          outline: none;
@@ -195,6 +196,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      transition: all ease 2s;
 
       .delete-btn-2 {
          outline: none;
@@ -228,7 +230,12 @@ header {
 }
 
 .delete-message-1 {
-   transform: translateY(8rem) rotateZ(20deg);
+   transform: translateX(-8rem) rotateZ(1deg);
+   opacity: 0;
+}
+
+.delete-message-2 {
+   transform: translateX(8rem) rotateZ(1deg);
    opacity: 0;
 }
 
