@@ -16,6 +16,8 @@ const messageDeleteOne = document.querySelector('.messages');
 const messageDeleteTwo = document.querySelector('.messages');
 
 // EVENTS
+// document.addEventListener('DOMContentLoaded', getMessages);
+document.addEventListener('DOMContentLoaded', getTodos);
 userOneForm.addEventListener('submit', userOneFunction);
 userTwoForm.addEventListener('submit', userTwoFunction);
 headerName.addEventListener('click', showContactFunction);
@@ -29,6 +31,7 @@ messageDeleteTwo.addEventListener('click', deleteMessageTwoFunction);
 // FUNCTIONS
 function userOneFunction(e) {
    e.preventDefault();
+   // saveLocalMessages(userOneInput.value);
 
    if (userOneInput.value === '') {
    } else {
@@ -37,6 +40,8 @@ function userOneFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-1');
+      // ADD TO LOCAL STORAGE
+      saveLocalMessagesOne(userOneInput.value);
       // Create a Button for the delete Icon
       const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('delete-btn-1');
@@ -70,6 +75,8 @@ function userTwoFunction(e) {
       // Create a new div for the text
       const newTextDiv = document.createElement('div');
       newTextDiv.classList.add('message-2');
+      // ADD TO LOCAL STORAGE
+      saveLocalMessagesTwo(userTwoInput.value);
       // Create a Button for the delete Icon
       const deleteBtn = document.createElement('button');
       deleteBtn.classList.add('delete-btn-2');
@@ -155,4 +162,30 @@ function deleteMessageTwoFunction(e) {
          messageTwoDiv.remove();
       });
    }
+}
+
+function saveLocalMessagesOne(message) {
+   // check = do i already have things in there
+   let messages;
+   if (localStorage.getItem('messages') === null) {
+      messages = [];
+   } else {
+      messages = JSON.parse(localStorage.getItem('messages'));
+   }
+
+   messages.push(message);
+   localStorage.setItem('messages', JSON.stringify(messages));
+}
+
+function saveLocalMessagesTwo(message) {
+   // chaeck = do i already have things in there
+   let messages;
+   if (localStorage.getItem('messages') === null) {
+      messages = [];
+   } else {
+      messages = JSON.parse(localStorage.getItem('messages'));
+   }
+
+   messages.push(message);
+   localStorage.setItem('messages', JSON.stringify(messages));
 }
